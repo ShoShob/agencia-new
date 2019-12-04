@@ -1,3 +1,15 @@
+<?php
+
+$servicos = [
+    ["imagem"=>"images/criando-sites.png","titulo"=>"Site!","descricao"=>"O site do seus sonhos sem ter que por a mão na massa. Estamos protos pra te entregá-lo pra você com tudo o que precisa no minimo de tempo."],
+    ["imagem"=>"images/ecommerce.png","titulo"=>"Lojas vituais!","descricao"=>"Quer vender seus produtos e serviços on-line e não sabe por onde começar? Deixa com a gente."],
+    ["imagem"=>"images/blog.png","titulo"=>"Blogs!","descricao"=>"A base de tudo o que se fala on-line. Criamoso seu canal de comunicação com o mundo. Comuniquese com seu público."]
+];
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,36 +50,21 @@
     </section>
     <section id="servico" class="container mt-5">
         <div class="row">
+            <?php foreach($servicos as $servico){ ?>
             <div class="col-4">
                 <div class="card">
-                    <img src="images/criando-sites.png" class="card-img-top" alt="Sites!">
+                    <img src="<?php echo $servico["imagem"]; ?>" class="card-img-top" alt="Sites!">
                     <div class="card-body">
-                      <h5 class="card-title">Sites!</h5>
-                      <p class="card-text">O site do seus sonhos sem ter que por a mão na massa. Estamos protos pra te entregá-lo pra você com tudo o que precisa no minimo de tempo.</p>
-                      <a href="#" class="btn btn-primary">Sim, eu quero!</a>
+                        <h5 class="card-title">
+                            <?php echo $servico["titulo"]; ?></p>
+                        </h5>
+                        <p class="card-text">
+                            <?php echo $servico["descricao"]; ?></p>
+                        <a href="#" class="btn btn-primary">Sim, eu quero!</a>
                     </div>
-                  </div>                  
+                </div>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="images/ecommerce.png" class="card-img-top" alt="Loja virtual!">
-                    <div class="card-body">
-                      <h5 class="card-title">Lojas vituais!</h5>
-                      <p class="card-text">Quer vender seus produtos e serviços on-line e não sabe por onde começar? Deixa com a gente.</p>
-                      <a href="#" class="btn btn-primary">Sim, eu quero!</a>
-                    </div>
-                  </div>                  
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="images/blog.png" class="card-img-top" alt="Blogs!">
-                    <div class="card-body">
-                      <h5 class="card-title">Blogs!</h5>
-                      <p class="card-text">A base de tudo o que se fala on-line. Criamoso seu canal de comunicação com o mundo. Comuniquese com seu público.</p>
-                      <a href="#" class="btn btn-primary">Sim, eu quero!</a>
-                    </div>
-                  </div>                  
-            </div>
+            <?php } ?>
         </div>
     </section>
     <section id="sobre" class="container mt-5 mb-5">
